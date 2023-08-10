@@ -118,6 +118,45 @@
     </footer>
     <script>
         // Animation code here
+      // Animation code here
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Fade-in animation for headings
+gsap.from("h2, h3", {
+  duration: 1,
+  opacity: 0,
+  y: -20,
+  stagger: 0.3,
+  ease: "power1.out",
+});
+
+// Slide-in animation for list items
+gsap.from("ul li", {
+  scrollTrigger: {
+    trigger: "ul",
+    start: "top 80%",
+  },
+  duration: 1,
+  opacity: 0,
+  x: -20,
+  stagger: 0.2,
+  ease: "power1.out",
+});
+
+// Scale-in animation for the footer
+gsap.from("footer", {
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top bottom",
+  },
+  duration: 1,
+  opacity: 0,
+  scale: 0.9,
+  ease: "power1.out",
+});
+
     </script>
+  
 </body>
 </html>
